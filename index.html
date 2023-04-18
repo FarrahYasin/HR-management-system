@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HR management system</title>
-</head>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+
 <body>
     <header>
+        <span><h1>Employee</h1></span>
         <!-- Header for navigating to any other pages. -->
-
         <a href="index.html">Home</a>
         <a href="accounting.html">Accounting</a>
     </header>
@@ -25,6 +28,48 @@
         <table id ="table1">
                 
         </table>
+
+<section>
+    <h3>New Employee</h3>
+
+<form id="employeeForm">
+<div>
+    <label for="fullname">Full Name</label>
+    <input type="text" name="fullname" id="fullname">
+</div>
+
+<div>
+    <label for="department">Department</label>
+    <select name="department" id="department">
+        <option value="administration">Administration</option>
+        <option value="marketing">Marketing</option>
+        <option value="development">Development</option>
+        <option value="finance">Finance</option>
+      </select>
+</div>
+
+<div>
+    <label for="level">Level</label>
+    <select name="level" id="level">
+        <option value="Junior">Junior</option>
+        <option value="Mid-Senior">Mid-Senior</option>
+        <option value="Senior">Senior</option>
+      </select>
+</div>
+
+<div>
+    <label for="imgurl">Image Url</label>
+    <input type="text" name="imgurl">
+</div>
+
+      <button type="submit">Submit</button>
+
+</form>
+</section>
+
+<section id="employee">
+
+</section>
 
     </main>
     <footer>
