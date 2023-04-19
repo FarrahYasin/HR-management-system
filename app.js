@@ -54,13 +54,13 @@ function calculateSalary (min, max){
 
 
 // for lab7
-let obj1 = new Employee(1000,'Ghazi Samer','Administration','Senior','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fperson-white-background.html&psig=AOvVaw0bugLllwSOSq8VVeAPT-Za&usce=images&cd=vfe&ved=0CBEQjRxqFwoTCMCo8fnfpv4CFQAAAAAdAAAAABAEt=1681471686837000&sour', 1) ;
-let obj2 = new Employee(1001,'Lana Ali','Finance','Senior','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fperson-white-background.html&psig=AOvVaw0bugLllwSOSq8VVeAPT-Za&usce=images&cd=vfe&ved=0CBEQjRxqFwoTCMCo8fnfpv4CFQAAAAAdAAAAABAEt=1681471686837000&sour', 1);
-let obj3 = new Employee(1001,'Tamara Ayoub','Marketing','Senior','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fperson-white-background.html&psig=AOvVaw0bugLllwSOSq8VVeAPT-Za&usce=images&cd=vfe&ved=0CBEQjRxqFwoTCMCo8fnfpv4CFQAAAAAdAAAAABAEt=1681471686837000&sour', 1);
-let obj4 = new Employee(1001,'Safi Walid','Administration','Mid-Senior','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fperson-white-background.html&psig=AOvVaw0bugLllwSOSq8VVeAPT-Za&usce=images&cd=vfe&ved=0CBEQjRxqFwoTCMCo8fnfpv4CFQAAAAAdAAAAABAEt=1681471686837000&sour', 1);
-let obj5 = new Employee(1001,'Omar Zaid','Development','Senior','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fperson-white-background.html&psig=AOvVaw0bugLllwSOSq8VVeAPT-Za&usce=images&cd=vfe&ved=0CBEQjRxqFwoTCMCo8fnfpv4CFQAAAAAdAAAAABAEt=1681471686837000&sour', 1);
-let obj6 = new Employee(1001,'Rana Saleh','Development','Junior','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fperson-white-background.html&psig=AOvVaw0bugLllwSOSq8VVeAPT-Za&usce=images&cd=vfe&ved=0CBEQjRxqFwoTCMCo8fnfpv4CFQAAAAAdAAAAABAEt=1681471686837000&sour', 1);
-let obj7 = new Employee(1002,'Hadi Ahmad','Finance','Mid-Senior','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fperson-white-background.html&psig=AOvVaw0bugLllwSOSq8VVeAPT-Za&usce=images&cd=vfe&ved=0CBEQjRxqFwoTCMCo8fnfpv4CFQAAAAAdAAAAABAEt=1681471686837000&sour', 1);
+let obj1 = new Employee(1000,'Ghazi Samer','Administration','Senior','https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Ghazi.jpg?raw=true', 1) ;
+let obj2 = new Employee(1001,'Lana Ali','Finance','Senior','https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Lana.jpg?raw=true', 1);
+let obj3 = new Employee(1001,'Tamara Ayoub','Marketing','Senior','https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Tamara.jpg?raw=true', 1);
+let obj4 = new Employee(1001,'Safi Walid','Administration','Mid-Senior','https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Safi.jpg?raw=true', 1);
+let obj5 = new Employee(1001,'Omar Zaid','Development','Senior','https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Omar.jpg?raw=true', 1);
+let obj6 = new Employee(1001,'Rana Saleh','Development','Junior','https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Rana.jpg?raw=true', 1);
+let obj7 = new Employee(1002,'Hadi Ahmad','Finance','Mid-Senior','https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Hadi.jpg?raw=true', 1);
 
 console.log(arr);
 obj1.getSalary(obj1);
@@ -70,38 +70,38 @@ obj4.getSalary(obj4);
 obj5.getSalary(obj5);
 obj6.getSalary(obj6);
 
-function show(Employee){
-  let table_1 = `<tr>
-  <th>EmployeeID</th>
-  <th>FullName</th>
-  <th>Department</th>
-  <th>Level</th>
-  </tr>`;
+// function show(Employee){
+//   let table_1 = `<tr>
+//   <th>EmployeeID</th>
+//   <th>FullName</th>
+//   <th>Department</th>
+//   <th>Level</th>
+//   </tr>`;
 
-  for(let i in arr){
-  table_1+= `<tr>
-  <td>${Employee[i].employeeID}</td>
-   <td>${Employee[i].fullName}</td>
-   <td>${Employee[i].department}</td>
-   <td>${Employee[i].level}</td>
-  </tr>`
-  document.getElementById("table1").innerHTML= table_1;
-  }
-}
+//   for(let i in arr){
+//   table_1+= `<tr>
+//   <td>${Employee[i].employeeID}</td>
+//    <td>${Employee[i].fullName}</td>
+//    <td>${Employee[i].department}</td>
+//    <td>${Employee[i].level}</td>
+//   </tr>`
+//   document.getElementById("table1").innerHTML= table_1;
+//   }
+// }
 
-show(arr);
+// show(arr);
 
 //render info
-Employee.prototype.info = function (arr){
-  return `Employee name is ${this.fullName}, and the salary is ${this.salary}`
-  }
+// Employee.prototype.info = function (arr){
+//   return `Employee name is ${this.fullName}, and the salary is ${this.salary}`
+//   }
   // console.log(obj1.info());
-  document.getElementById("p1").innerHTML= obj1.info();
-  document.getElementById("p2").innerHTML= obj2.info();
-  document.getElementById("p3").innerHTML= obj3.info();
-  document.getElementById("p4").innerHTML= obj4.info();
-  document.getElementById("p5").innerHTML= obj5.info();
-  document.getElementById("p6").innerHTML= obj6.info();
+  // document.getElementById("card1").innerHTML= obj1.info();
+  // document.getElementById("card2").innerHTML= obj2.info();
+  // document.getElementById("card3").innerHTML= obj3.info();
+  // document.getElementById("card4").innerHTML= obj4.info();
+  // document.getElementById("card5").innerHTML= obj5.info();
+  // document.getElementById("card6").innerHTML= obj6.info();
   //end lab7
 
    //function
@@ -164,4 +164,10 @@ Employee.prototype.generateDigits = function () {//we wrote min and max because 
   const employeeForm = document.getElementById("employeeForm");
   employeeForm.addEventListener("submit", addNewEmployee);
 
-
+   obj1.render();
+   obj2.render();
+   obj3.render();
+   obj4.render();
+   obj5.render();
+   obj6.render();
+   obj7.render();
