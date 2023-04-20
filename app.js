@@ -1,6 +1,9 @@
 'use strict';
 
 let arr=[];
+
+// Employee.allEmployees = [];
+
 function Employee(employeeID,fullName, department, level, imgurl, salary){
   // this.employeeID =0;
   this.employeeID = employeeID;
@@ -10,8 +13,10 @@ function Employee(employeeID,fullName, department, level, imgurl, salary){
   this.imgurl=imgurl;
   this.salary = salary;
   arr.push(this);
-  
+  Employee.allEmployees.push(this);
   }
+  Employee.allEmployees = [];
+
 function calculateSalary (min, max){
   let difference = max - min;
   let rand = Math.random();
@@ -53,6 +58,7 @@ function calculateSalary (min, max){
 }
 
 
+
 // for lab7
 let obj1 = new Employee(1000,'Ghazi Samer','Administration','Senior','https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Ghazi.jpg?raw=true', 1) ;
 let obj2 = new Employee(1001,'Lana Ali','Finance','Senior','https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Lana.jpg?raw=true', 1);
@@ -69,6 +75,7 @@ obj3.getSalary(obj3);
 obj4.getSalary(obj4);
 obj5.getSalary(obj5);
 obj6.getSalary(obj6);
+
 
 // function show(Employee){
 //   let table_1 = `<tr>
@@ -113,6 +120,8 @@ Employee.prototype.generateDigits = function () {//we wrote min and max because 
   this.employeeID = Math.floor(1000 + Math.random() * 9000);
   }
   // obj1.generateDigits();
+console.log("hh"+Employee.allEmployees);
+
 
   Employee.prototype.render = function(){
     const employee = document.getElementById('employee');
@@ -122,6 +131,11 @@ Employee.prototype.generateDigits = function () {//we wrote min and max because 
     // const div2Ele = document.createElement('card');//new can remove it
     // employee.appendChild(div2Ele);//new can remove it
 
+    employee.innerHTML = '';
+
+    for(let i = 0; i < Employee.allEmployees.length; i++){
+      let sigleEmployee = Employee.allEmployees[i];
+      
     const divEle = document.createElement('div');
     employee.appendChild(divEle);
     
@@ -129,22 +143,23 @@ Employee.prototype.generateDigits = function () {//we wrote min and max because 
     divEle.appendChild(imgEle);
 
     // const src = document.createElement('src');
-    imgEle.src = `${this.imgurl}`;
+    imgEle.src = `${sigleEmployee.imgurl}`;
     // imgEle.appendChild(src);
    
       const pEle = document.createElement('p');
-      pEle.textContent = `Name : ${this.fullName} - ID: ${this.employeeID}`;
+      pEle.textContent = `Name : ${sigleEmployee.fullName} - ID: ${sigleEmployee.employeeID}`;
       divEle.appendChild(pEle);
 
       const p2Ele = document.createElement('p');
-     p2Ele.textContent = `Department: ${this.department} - Level: ${this.level} `;
+     p2Ele.textContent = `Department: ${sigleEmployee.department} - Level: ${sigleEmployee.level} `;
       divEle.appendChild(p2Ele);
 
       const p3Ele = document.createElement('p');
-      p3Ele.textContent = `Salary : ${this.salary} `;
+      p3Ele.textContent = `Salary : ${sigleEmployee.salary} `;
       divEle.appendChild(p3Ele);
-
+    }
   }
+
   function addNewEmployee(e){
     e.preventDefault();
     let fullname = e.target.fullname.value;
@@ -155,19 +170,56 @@ Employee.prototype.generateDigits = function () {//we wrote min and max because 
 
     const newEmployee= new Employee(1,fullname, department, level, imgurl,1);
     newEmployee.generateDigits();
+
     newEmployee.getSalary(newEmployee);
+
     newEmployee.render();
 
-
     console.log(newEmployee);  
+
+    saveData();
   }
+
+function saveData(){
+  let data = JSON.stringify(Employee.allEmployees);
+  localStorage.setItem('employees', data)
+}
+
+function getDataFromTheLocalStorage() {
+  let stringObj = localStorage.getItem('employees');
+  let parseObj = JSON.parse(stringObj);
+  console.log(parseObj)
+  // Employee.allEmployees=[];
+  if(parseObj !== null) {
+    for(let i = 0; i < parseObj.length; i++) {
+      // new Employee(1,parseObj[i].fullname, parseObj[i].department, parseObj[i].level, parseObj[i].imgurl,1);   
+     
+      new Employee(parseObj[i].employeeID,parseObj[i].fullname, parseObj[i].department, parseObj[i].level, parseObj[i].imgurl,parseObj[i].salary);
+      // Employee.allEmployees.length
+
+    }
+    console.log(Employee.allEmployees);
+
+    Employee.allEmployees[0].render();
+    
+
+    // console.log(Employee.allEmployees[0])
+  }
+  
+}
+
   const employeeForm = document.getElementById("employeeForm");
   employeeForm.addEventListener("submit", addNewEmployee);
 
-   obj1.render();
-   obj2.render();
-   obj3.render();
-   obj4.render();
-   obj5.render();
-   obj6.render();
-   obj7.render();
+  getDataFromTheLocalStorage();
+
+  // obj1.render();
+  // obj2.render();
+  // obj3.render();
+  // obj4.render();
+  // obj5.render();
+  // obj6.render();
+  // obj7.render();
+
+
+
