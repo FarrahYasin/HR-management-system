@@ -2,7 +2,6 @@
 
 let arr=[];
 
-// Employee.allEmployees = [];
 
 function Employee(employeeID,fullName, department, level, imgurl, salary){
   // this.employeeID =0;
@@ -75,6 +74,7 @@ obj3.getSalary(obj3);
 obj4.getSalary(obj4);
 obj5.getSalary(obj5);
 obj6.getSalary(obj6);
+obj7.getSalary(obj7);
 
 
 // function show(Employee){
@@ -114,14 +114,11 @@ obj6.getSalary(obj6);
    //function
 //Create a function 
 //to generate a unique four digits employee id number.
-
-
 Employee.prototype.generateDigits = function () {//we wrote min and max because we said we need the random number between 2numbers
   this.employeeID = Math.floor(1000 + Math.random() * 9000);
   }
   // obj1.generateDigits();
-console.log("hh"+Employee.allEmployees);
-
+// console.log("hh"+Employee.allEmployees);
 
   Employee.prototype.render = function(){
     const employee = document.getElementById('employee');
@@ -166,7 +163,6 @@ console.log("hh"+Employee.allEmployees);
     let department = e.target.department.value;
     let level = e.target.level.value;
     let imgurl = e.target.imgurl.value;
-    // let employeeID =e.target.employeeID.value
 
     const newEmployee= new Employee(1,fullname, department, level, imgurl,1);
     newEmployee.generateDigits();
@@ -189,23 +185,16 @@ function getDataFromTheLocalStorage() {
   let stringObj = localStorage.getItem('employees');
   let parseObj = JSON.parse(stringObj);
   console.log(parseObj)
-  // Employee.allEmployees=[];
   if(parseObj !== null) {
+    Employee.allEmployees=[];
     for(let i = 0; i < parseObj.length; i++) {
-      // new Employee(1,parseObj[i].fullname, parseObj[i].department, parseObj[i].level, parseObj[i].imgurl,1);   
-     
-      new Employee(parseObj[i].employeeID,parseObj[i].fullname, parseObj[i].department, parseObj[i].level, parseObj[i].imgurl,parseObj[i].salary);
-      // Employee.allEmployees.length
 
+      new Employee(parseObj[i].employeeID,parseObj[i].fullName, parseObj[i].department, parseObj[i].level, parseObj[i].imgurl,parseObj[i].salary);
     }
     console.log(Employee.allEmployees);
-
     Employee.allEmployees[0].render();
-    
-
-    // console.log(Employee.allEmployees[0])
   }
-  
+
 }
 
   const employeeForm = document.getElementById("employeeForm");
@@ -213,13 +202,15 @@ function getDataFromTheLocalStorage() {
 
   getDataFromTheLocalStorage();
 
-  // obj1.render();
-  // obj2.render();
-  // obj3.render();
-  // obj4.render();
-  // obj5.render();
-  // obj6.render();
-  // obj7.render();
+  obj1.render();
+  obj2.render();
+  obj3.render();
+  obj4.render();
+  obj5.render();
+  obj6.render();
+  obj7.render();
+
+  saveData();
 
 
 
